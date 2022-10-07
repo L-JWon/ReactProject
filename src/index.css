@@ -29,3 +29,15 @@ code {
 .card .btn{
   box-shadow: none;
 }
+.jumbotron{
+  font-family: 'Black Han Sans', sans-serif;
+}
+
+.btn-primary{
+  background-color: cornflowerblue;
+  border-color: cornflowerblue;
+}
+
+*{
+  font-family: 'Noto Sans KR', sans-serif;
+}

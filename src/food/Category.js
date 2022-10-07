@@ -30,7 +30,7 @@ function Category() {
 
 
     let html=cateList.map((c)=>
-        <div className="card" style={{"width":"27rem","marginLeft":"10px","marginBottom":"20px"}}>
+        <div className="card" style={{"width":"23.6%","marginLeft":"13px","marginRight":"13px","marginBottom":"20px"}}>
             <img src={c.poster} className="card-img-top" style={{"width":"100%"}}/>
                 <div className="card-body">
                     <h5 className="card-title">{c.title}</h5>
@@ -44,10 +44,10 @@ function Category() {
     return (
         <Fragment>
             <div className={"row"}>
-                <div className={"text-center"}>
-                    <button className={"btn btn-lg btn-primary"} onClick={()=>categoryChange(1)}>믿고 보는 맛집 리스트</button>
-                    <button className={"btn btn-lg btn-primary"} style={{"marginLeft":"5px"}} onClick={()=>categoryChange(2)}>지역별 인기 맛집</button>
-                    <button className={"btn btn-lg btn-primary"} style={{"marginLeft":"5px"}} onClick={()=>categoryChange(3)}>메뉴별 인기 맛집</button>
+                <div className={"text-center"} style={{"marginTop":"40px"}}>
+                    <button className={"btn btn-lg btn-primary"} onClick={()=>categoryChange(1)}>베스트 장소</button>
+                    <button className={"btn btn-lg btn-primary"} style={{"marginLeft":"5px"}} onClick={()=>categoryChange(2)}>지역별 인기 장소</button>
+                    <button className={"btn btn-lg btn-primary"} style={{"marginLeft":"5px"}} onClick={()=>categoryChange(3)}>분류별 인기 장소</button>
                 </div>
             </div>
             <div style={{"height":"40px"}}></div>

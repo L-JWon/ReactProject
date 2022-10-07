@@ -33,21 +33,23 @@ function FoodList(){
     let html=cateList.map((m)=>
         <Fragment>
         <table className={"table"}>
-            <tr>
-                <td className={"text-center"} width={"30%"} rowSpan={"4"}>
-                   <NavLink to={"/food/detail/"+m.fno}><img src={m.poster} style={{"width":"340px","height":"240px"}}/></NavLink>
-                </td>
-                <td width={"70%"}><h3><NavLink to={"/food/detail/"+m.fno}>{m.name} <span style={{"color":"orange"}}>{m.score}</span></NavLink></h3></td>
-            </tr>
-            <tr>
-                <td width={"70%"}>{m.address}</td>
-            </tr>
-            <tr>
-                <td width={"70%"}>{m.tel}</td>
-            </tr>
-            <tr>
-                <td width={"70%"}>{m.type}</td>
-            </tr>
+            <tbody>
+                <tr>
+                    <td className={"text-center"} width={"30%"} rowSpan={"4"} style={{"verticalAlign":"middle"}}>
+                       <NavLink to={"/food/detail/"+m.fno}><img src={m.poster} style={{"width":"340px","height":"240px"}}/></NavLink>
+                    </td>
+                    <td width={"70%"} style={{"verticalAlign":"middle"}}><h3><NavLink to={"/food/detail/"+m.fno} style={{"textDecoration":"none","color":"#111"}}>{m.name} <span style={{"color":"orange"}}>{m.score}</span></NavLink></h3></td>
+                </tr>
+                <tr>
+                    <td width={"70%"} style={{"background-color": "#f9f9f9","verticalAlign":"middle"}}>{m.address}</td>
+                </tr>
+                <tr>
+                    <td width={"70%"} style={{"verticalAlign":"middle"}}>{m.tel}</td>
+                </tr>
+                <tr>
+                    <td width={"70%"} style={{"background-color": "#f9f9f9","verticalAlign":"middle"}}>{m.type}</td>
+                </tr>
+            </tbody>
         </table>
         </Fragment>
 
@@ -60,7 +62,7 @@ function FoodList(){
                 <h3 className={"text-center"}>{info.subject}</h3>
             </div>
             <div style={{"height":"40px"}}></div>
-            <div className={"row row1"}>
+            <div className={"row"} style={{"width":"60%"}}>
                 <table className={"table"}>
                     <tr>
                         <td>
