@@ -1,6 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
 import  {Component,Fragment} from "react";
+import {BrowserRouter as Router,Route,Routes} from "react-router-dom";
+import Header from "./main/Header";
+import Footer from "./main/Footer";
+import Category from "./food/Category";
+import GoodsAll from "./goods/GoodsAll";
+import GoodsSpecial from "./goods/GoodsSpecial";
+import GoodsNew from "./goods/GoodsNew";
+import GoodsBest from "./goods/GoodsBest";
+import Goods_Main from "./goods/Goods_Main";
+import List from "./board/List";
+import FoodList from "./food/FoodList";
+import FoodDetail from "./food/FoodDetail";
+
 /*
   class App extends Component 로 시작하는 방법 1  ==> 여러개 기능을 동시에 사용하기 위해 만들 때
 
@@ -24,10 +36,30 @@ class App extends Component{
 
    */
   render() {
+      /*
+          Route : Controller라고 생각하면됨
+          path : @RequesetMapping() 이라고 생각하면됨
+          element : Mapping 아래에 있는 메소드라고 생각하면 됨
+       */
     return (
-      <div>
-        {this.props.msg}
-      </div>
+      <Router>
+        <Fragment>
+          <Header/>
+            <div className={"container-fluid"}>
+              <Routes>
+                <Route exact path={"/"} element={<Category/>}/>   {/* Category 만들 때 function Category() 로 만들었음  펑션 하나를 호출하라는 의미!!!*/}
+                <Route exact path={"/food/list/:cno"} element={<FoodList/>}/>
+                <Route exact path={"/food/detail/:fno"} element={<FoodDetail/>}/>
+                <Route path={"/goods/all"} element={<GoodsAll/>}/>
+                <Route path={"/goods/best"} element={<GoodsBest/>}/>
+                <Route path={"/goods/special"} element={<GoodsSpecial/>}/>
+                <Route path={"/goods/new"} element={<GoodsNew/>}/>
+                <Route path={"/board/list"} element={<List/>}/>
+              </Routes>
+            </div>
+          <Footer/>
+        </Fragment>
+      </Router>
     )
 
   }
